@@ -6,7 +6,7 @@ class QuoteTrigger:
     def on_message(self, bot, event):
         msg = event.message
 
-        if not bot.trigger in msg:
+        if not bot.trigger.lower() in msg.lower():
             return False
         if len(bot.quotes) == 0:
             bot.respond(event, "No quotes")
